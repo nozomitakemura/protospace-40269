@@ -1,6 +1,7 @@
 class Prototype < ApplicationRecord
-  has_many :comments
-  belongs_to :user, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  belongs_to :user
+  #belongs_to :user, dependent: :destroy
   has_one_attached :image, dependent: :destroy
 
   validates :title, presence: true
@@ -8,7 +9,7 @@ class Prototype < ApplicationRecord
   validates :concept, presence: true
   validates :image, presence: true
 
-  belongs_to :user
+
 
 
 end
