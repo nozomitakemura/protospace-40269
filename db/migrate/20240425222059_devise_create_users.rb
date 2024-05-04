@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 class DeviseCreateUsers < ActiveRecord::Migration[7.0]
   def change
     create_table :users do |t|
@@ -10,13 +9,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.text   :profile,            null: false
       t.text   :occupation,            null: false
       t.text   :position,            null: false, foreign_key: true
-      
-    create_table :prototypes do |t|
-      t.string :title,              null: false
-      t.string :catch_copy, null: false
-      t.string :text,               null: false 
-      t.references   :user,            null: false
-
 
       ## Recoverable
       t.string   :reset_password_token
@@ -42,8 +34,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
-
-
       t.timestamps null: false
     end
 
@@ -51,5 +41,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
     add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
-  end
+
+end
 end

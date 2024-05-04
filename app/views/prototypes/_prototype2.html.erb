@@ -1,0 +1,23 @@
+<div class="prototype">
+    <div class="prototype-title">
+      <!-- 投稿したユーザー名情報を出力する -->
+      <%= prototype.title %>
+    </div>
+    <div class="prototype-name">
+      <!-- 投稿したメッセージ内容を記述する -->
+      <%= prototype.user.name %>
+    </div>
+    <div class="prototype-date">
+      <!-- 投稿した時刻を出力する -->
+      <%= prototype.catch_copy %>
+    </div>
+
+  <div class="prototype-catch_copy">
+      <!-- 投稿したメッセージ内容を記述する -->
+      <%= prototype.concept %>
+    </div>
+
+
+<%= image_tag prototype.image, class: 'prototype-image' if prototype.image.attached? %>
+
+</div>
