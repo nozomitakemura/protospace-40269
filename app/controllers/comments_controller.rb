@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to prototype_comments_path
     else
+      @comment = Comment.find(params[:id])
       render :show, status: :unprocessable_entity
     end
   end
